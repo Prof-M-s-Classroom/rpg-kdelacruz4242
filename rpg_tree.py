@@ -43,3 +43,5 @@ if __name__ == "__main__":
 
     print("TODO: Start the RPG game")
     game_tree.play_game()
+
+    #test
