@@ -15,7 +15,7 @@ class GameDecisionTree:
     def insert(self, event_number, description, left_event, right_event):
         """Insert a new story node into the tree."""
         node = self.nodes.get(event_number, StoryNode(event_number, description))
-        node.description = description  # Update description if it was previously "Undecided path"
+        node.description = description
 
         if left_event is not None:
             if left_event not in self.nodes:
@@ -27,9 +27,9 @@ class GameDecisionTree:
                 self.nodes[right_event] = StoryNode(right_event,"")
             node.right = self.nodes[right_event]
 
-        self.nodes[event_number] = node  # Store node
+        self.nodes[event_number] = node  # store node
         if not self.root:
-            self.root = node  # Set root to the first inserted node
+            self.root = node
 
     def play_game(self):
         """Interactive function that plays the RPG."""
